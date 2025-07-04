@@ -6,10 +6,11 @@ package promptpayqr
 
 import (
 	"fmt"
-	"github.com/kazekim/promptpay-qr-go/crc16"
 	"regexp"
 	"strconv"
 	"strings"
+
+	"github.com/GodeFvt/promptpay-qr-go/crc16"
 )
 
 const (
@@ -165,8 +166,6 @@ func formatAmount(amount string) string {
 	} else {
 		panic(err)
 	}
-
-	return ""
 }
 
 func checkSum(value string) string {

@@ -6,20 +6,25 @@ package main
 
 import (
 	"bytes"
+	"encoding/base64"
 	"fmt"
-	"github.com/kazekim/promptpay-qr-go"
+
 	"image"
 	"image/png"
 	"os"
+
+	promptpayqr "github.com/GodeFvt/promptpay-qr-go"
 )
 
 func main() {
-
-	qr, err := promptpayqr.QRWithPromptpayLogoForTargetWithAmount("0899999999","500" )
-
+	qr, err := promptpayqr.QRForTarget("09999999999")
 	if err != nil {
 		panic(err)
 	}
+
+	base64Img := base64.StdEncoding.EncodeToString(*qr)
+	fmt.Println()
+	fmt.Println("Base64 Encoded Image:", base64Img)
 
 	byteToImage(*qr)
 

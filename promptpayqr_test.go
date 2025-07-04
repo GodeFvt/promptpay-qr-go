@@ -1,9 +1,10 @@
 package promptpayqr_test
 
 import (
-	tqrc "github.com/kazekim/promptpay-qr-go"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	tqrc "github.com/GodeFvt/promptpay-qr-go"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestGenerateBillPaymentPayloadMustValid(t *testing.T) {
